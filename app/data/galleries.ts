@@ -61,7 +61,7 @@ export const GALLERIES: Gallery[] = [
         caption: "Madrid · City Horizon",
       },
       {
-        src: "v1773436069/DSC08009_cvo4vn.jpg",
+        src: "v1774013033/madrid_qr5923.jpg",
         caption: "Madrid · Quiet Moments",
       },
       {
@@ -69,6 +69,10 @@ export const GALLERIES: Gallery[] = [
         caption: "Madrid · Mountain Glow",
       },
       { src: "v1773436065/DSC02533_zhoal7.jpg", caption: "Madrid · Night Sky" },
+      {
+        src: "v1773438048/_DSC0816i_47_vinl6n.jpg",
+        caption: "Madrid · Wind & Flight ",
+      },
     ],
   },
   {
