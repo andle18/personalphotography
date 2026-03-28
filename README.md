@@ -57,16 +57,19 @@ npm run start
 
 ### Environment Variables
 
-Create a `.env.local` file only if you want to use Cloudinary-hosted images.
+Create a `.env.local` file for Cloudinary images and Google Analytics.
 
 ```env
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 ```
 
 Notes:
 
 - Local images stored in `public/` work without this variable.
 - Cloudinary-based image entries require this variable to render correctly.
+- `NEXT_PUBLIC_GA_ID` enables GA4 page tracking via the Next.js Google Analytics integration.
+- In production, add the same variables in your hosting provider (for example, Vercel Environment Variables).
 
 ### Scripts
 
@@ -158,16 +161,19 @@ npm run start
 
 ### Variables de Entorno
 
-Crea un archivo `.env.local` solo si vas a usar imagenes alojadas en Cloudinary.
+Crea un archivo `.env.local` para imagenes de Cloudinary y Google Analytics.
 
 ```env
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 ```
 
 Notas:
 
 - Las imagenes locales dentro de `public/` funcionan sin esta variable.
 - Las entradas que usan Cloudinary necesitan esta variable para renderizar correctamente.
+- `NEXT_PUBLIC_GA_ID` activa el tracking de paginas de GA4 mediante la integracion de Google Analytics de Next.js.
+- En produccion, agrega las mismas variables en tu proveedor de hosting (por ejemplo, Environment Variables de Vercel).
 
 ### Scripts
 
