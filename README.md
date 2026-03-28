@@ -1,36 +1,207 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Andres Gomes Portfolio
 
-## Getting Started
+Professional photography portfolio built with Next.js, focused on visual presentation, curated galleries, and a clean browsing experience for selected work.
 
-First, run the development server:
+Este es un portafolio profesional de fotografia construido con Next.js, enfocado en la presentacion visual, galerias curadas y una experiencia limpia para explorar proyectos seleccionados.
+
+## English
+
+### Project Overview
+
+This project is a personal photography portfolio for Andres Gomes. It showcases selected series through a cinematic landing page, a horizontally scrollable work index, and dedicated gallery pages for each collection.
+
+The application is intentionally content-driven. It does not include a CMS, authentication, or a backend contact workflow at this stage.
+
+### Features
+
+- Landing page with editorial-style hero section and photographer introduction
+- Work index with horizontal scroll interaction
+- Dedicated gallery pages by collection slug
+- Mixed image source support through Cloudinary and local assets
+- Animated transitions for selected work cards
+- Contact page with portfolio-style inquiry form UI
+- Shared footer with social links
+
+### Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- GSAP
+- Swiper
+- Cloudinary
+
+### Installation and Setup
+
+#### Prerequisites
+
+- Node.js 20+
+- npm
+
+#### Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in the browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+### Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Create a `.env.local` file only if you want to use Cloudinary-hosted images.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Notes:
 
-## Deploy on Vercel
+- Local images stored in `public/` work without this variable.
+- Cloudinary-based image entries require this variable to render correctly.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev`: Start the development server
+- `npm run build`: Create a production build
+- `npm run start`: Start the production server
+- `npm run lint`: Run ESLint
+
+### Project Structure
+
+```text
+app/
+	components/          Reusable UI and motion components
+	contact/             Contact page
+	data/                Portfolio and gallery data
+	work/                Work listing and gallery routes
+	globals.css          Global styles
+	layout.tsx           Root layout and metadata
+	page.tsx             Homepage
+public/                Local static assets
+```
+
+### Current Limitations
+
+- The contact form is currently presentational and does not submit to a backend service
+- Project content is managed through local TypeScript data files instead of a CMS
+- There is no automated test suite yet
+- Metadata and SEO can be expanded further for production-grade discoverability
+
+### Future Improvements
+
+- Connect the contact form to a real email or form processing service
+- Add stronger SEO metadata, Open Graph tags, and structured data
+- Introduce a CMS or content workflow for easier gallery updates
+- Add accessibility review and keyboard interaction refinements
+- Add tests for critical UI flows and data integrity
+- Improve asset organization and content consistency across routes
+
+## Espanol
+
+### Descripcion General
+
+Este proyecto es un portafolio personal de fotografia para Andres Gomes. Presenta series seleccionadas a traves de una home con enfoque editorial, una seccion de trabajo con scroll horizontal y paginas de galeria dedicadas para cada coleccion.
+
+La aplicacion esta pensada principalmente como una experiencia visual. En su estado actual no incluye CMS, autenticacion ni un flujo backend para el formulario de contacto.
+
+### Funcionalidades
+
+- Home con hero visual y presentacion del fotografo
+- Seccion de trabajos con interaccion horizontal
+- Paginas de galeria por coleccion
+- Soporte para imagenes desde Cloudinary y assets locales
+- Transiciones animadas en tarjetas destacadas
+- Pagina de contacto con interfaz de formulario
+- Footer compartido con enlaces sociales
+
+### Stack Tecnologico
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- GSAP
+- Swiper
+- Cloudinary
+
+### Instalacion y Puesta en Marcha
+
+#### Requisitos
+
+- Node.js 20+
+- npm
+
+#### Desarrollo Local
+
+```bash
+npm install
+npm run dev
+```
+
+Abre `http://localhost:3000` en el navegador.
+
+#### Build de Produccion
+
+```bash
+npm run build
+npm run start
+```
+
+### Variables de Entorno
+
+Crea un archivo `.env.local` solo si vas a usar imagenes alojadas en Cloudinary.
+
+```env
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
+```
+
+Notas:
+
+- Las imagenes locales dentro de `public/` funcionan sin esta variable.
+- Las entradas que usan Cloudinary necesitan esta variable para renderizar correctamente.
+
+### Scripts
+
+- `npm run dev`: Inicia el servidor de desarrollo
+- `npm run build`: Genera el build de produccion
+- `npm run start`: Inicia el servidor en modo produccion
+- `npm run lint`: Ejecuta ESLint
+
+### Estructura del Proyecto
+
+```text
+app/
+	components/          Componentes reutilizables de UI y animacion
+	contact/             Pagina de contacto
+	data/                Datos del portafolio y galerias
+	work/                Rutas de trabajos y galerias
+	globals.css          Estilos globales
+	layout.tsx           Layout raiz y metadata
+	page.tsx             Pagina principal
+public/                Assets estaticos locales
+```
+
+### Limitaciones Actuales
+
+- El formulario de contacto es solo visual y no envia datos a un servicio real
+- El contenido se gestiona desde archivos TypeScript locales, no desde un CMS
+- Todavia no existe una suite de tests automatizados
+- El SEO y la metadata todavia pueden mejorar para un lanzamiento mas solido
+
+### Mejoras Futuras
+
+- Conectar el formulario de contacto a un servicio real de email o forms
+- Mejorar metadata SEO, Open Graph y structured data
+- Incorporar un CMS o flujo de contenido mas facil de mantener
+- Revisar accesibilidad y mejorar interacciones por teclado
+- Agregar tests para flujos clave y validacion de datos
+- Ordenar mejor los assets y unificar la consistencia del contenido entre rutas

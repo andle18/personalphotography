@@ -1,26 +1,53 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --case-pad: 1.5625vw;
+  --case-border: rgba(180, 174, 183, 0.2);
+  --scrollbar-track-color: #2b292c;
+  --scrollbar-thumb-color: #fff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .scrollbar-themed {
+    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+    scrollbar-width: thin;
   }
-}
+  .scrollbar-themed::-webkit-scrollbar {
+    height: 10px;
+  }
+  .scrollbar-themed::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+  }
+  .scrollbar-themed::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .case-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    user-select: none;
+    cursor: pointer;
+    border-left: 1px solid var(--case-border);
+    border-right: 1px solid var(--case-border);
+    background: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  .case-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-top: 4px solid #fff;
+    z-index: 10;
+  }
 }
