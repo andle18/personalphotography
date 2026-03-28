@@ -51,18 +51,24 @@ export const GALLERIES: Gallery[] = [
     slug: "spain",
     title: "Spain",
     images: [
-      { src: "v1773436069/DSC08009_cvo4vn.jpg", caption: "Madrid · Atardecer" },
-      { src: "v1774013037/madrid0_zuqhcq.jpg", caption: "Madrid · Sunset" },
-      { src: "v1774013024/madrid9_lbqluj.jpg", caption: "Madrid · Skyline" },
       {
         src: "v1773436069/DSC08009_cvo4vn.jpg",
-        caption: "Madrid · Reflections",
+        caption: "Madrid · Golden Coast",
+      },
+      { src: "v1774013037/madrid0_zuqhcq.jpg", caption: "Madrid · Quiet Game" },
+      {
+        src: "v1774013024/madrid9_lbqluj.jpg",
+        caption: "Madrid · City Horizon",
+      },
+      {
+        src: "v1773436069/DSC08009_cvo4vn.jpg",
+        caption: "Madrid · Quiet Moments",
       },
       {
         src: "v1773436070/DSC08295-Enhanced-NR_bigvco.jpg",
-        caption: "Madrid · Architecture",
+        caption: "Madrid · Mountain Glow",
       },
-      { src: "v1773436065/DSC02533_zhoal7.jpg", caption: "Madrid · Cityscape" },
+      { src: "v1773436065/DSC02533_zhoal7.jpg", caption: "Madrid · Night Sky" },
     ],
   },
   {
@@ -72,11 +78,20 @@ export const GALLERIES: Gallery[] = [
       { src: "v1774013031/monza5_jczule.jpg", caption: "Lake Como · Motion" },
       {
         src: "v1774013029/monza7_unxat6.jpg",
-        caption: "Lake Como · Landscape",
+        caption: "Lake Como · Hidden Villa",
       },
-      { src: "v1774013032/monza9_xoxqnh.jpg", caption: "Monza · Emotion" },
-      { src: "v1774013027/monza3_hvtbcg.jpg", caption: "Monza · Focus" },
-      { src: "v1774013024/monza13_papmru.jpg", caption: "Monza · Racing" },
+      {
+        src: "v1774013032/monza9_xoxqnh.jpg",
+        caption: "Milan · Golden Passage",
+      },
+      {
+        src: "v1774013027/monza3_hvtbcg.jpg",
+        caption: "Lake Como · Framed View",
+      },
+      {
+        src: "v1774013024/monza13_papmru.jpg",
+        caption: "Verona · Timeless Stone",
+      },
     ],
   },
   {
@@ -102,19 +117,40 @@ export const GALLERIES: Gallery[] = [
     slug: "gold-sun",
     title: "Gold Sun",
     images: [
-      { src: "v1773438042/_DSC0923_hucdd8.jpg", caption: "Gold Sun · Sunset" },
+      {
+        src: "v1773438042/_DSC0923_hucdd8.jpg",
+        caption: "Madrid · Evening Glow",
+      },
+
       {
         src: "v1773438041/IMG_0029_mzmzda.jpg",
-        caption: "Gold Sun · Warmth",
+        caption: "London · Shared Light",
       },
-      { src: "v1773438045/DSC00167_kbccql.jpg", caption: "Gold Sun · Beauty" },
-      { src: "v1773438045/DSC04618_zva3pw.jpg", caption: "Gold Sun · Horizon" },
+
+      {
+        src: "v1773438045/DSC00167_kbccql.jpg",
+        caption: "London · Soft Horizon",
+      },
+
+      {
+        src: "v1773438045/DSC04618_zva3pw.jpg",
+        caption: "Madeira · Burning Horizon",
+      },
+
       {
         src: "v1773438047/DSC04662_hqnh0r.jpg",
-        caption: "Gold Sun · Glow",
+        caption: "Madeira · Fading Light",
       },
-      { src: "v1774013023/sun6_rz8jux.jpg", caption: "Gold Sun · Radiance" },
-      { src: "v1774013033/sun8_enwtka.jpg", caption: "Gold Sun · Vibrance" },
+
+      {
+        src: "v1774013023/sun6_rz8jux.jpg",
+        caption: "Alicante · Pastel Sky",
+      },
+
+      {
+        src: "v1774013033/sun8_enwtka.jpg",
+        caption: "Alicante · Endless Sky",
+      },
     ],
   },
   {
@@ -123,35 +159,35 @@ export const GALLERIES: Gallery[] = [
     images: [
       {
         src: "v1773436084/_DSC7185-Enhanced-SR_adbpft.jpg",
-        caption: "Wildlife · Safari",
+        caption: "Wildlife · Still Water",
       },
       {
         src: "v1773436072/_DSC6976_hd5dfb.jpg",
-        caption: "Wildlife  · Wildlife",
+        caption: "Wildlife · Quiet Gaze",
       },
       {
         src: "v1773436075/_DSC6916-2_x3mm6i.jpg",
-        caption: "Wildlife · Nature",
+        caption: "Wildlife · Blooming Wild",
       },
       {
         src: "v1774719452/_DSC6233-Enhanced-SR_dhr7qz.jpg",
-        caption: "Wildlife · Animals",
+        caption: "Wildlife · Watchful Moment",
       },
       {
         src: "v1774721132/_DSC0303-2_hcrqo3.jpg",
-        caption: "Wildlife · Animals",
+        caption: "Wildlife · Curious Gaze",
       },
       {
         src: "v1774721134/_DSC1054_x1bonu.jpg",
-        caption: "Wildlife · Animals",
+        caption: "Wildlife · Upright",
       },
       {
         src: "v1774721133/_DSC1132_szwmbe.jpg",
-        caption: "Wildlife · Animals",
+        caption: "Wildlife · City Nature",
       },
       {
         src: "v1774721133/DSC06198_olrtop.jpg",
-        caption: "Wildlife · Animals",
+        caption: "Wildlife · Paired Instinct",
       },
     ],
   },
