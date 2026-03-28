@@ -2,19 +2,27 @@ import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-const cloudinaryCloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
-const socialPreviewId = process.env.NEXT_PUBLIC_SOCIAL_PREVIEW_ID;
-const socialPreviewImage =
-  cloudinaryCloudName && socialPreviewId
-    ? `https://res.cloudinary.com/${cloudinaryCloudName}/image/upload/f_auto,q_auto,c_fill,w_1200,h_630/${socialPreviewId.replace(/^\/+/, "")}`
-    : "/social-preview.jpg";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000");
+const cloudinaryCloudName =
+  process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || "dustgzbyd";
+const socialPreviewId =
+  process.env.NEXT_PUBLIC_SOCIAL_PREVIEW_ID ||
+  "v1773436068/DSC00297_ugmqfs.jpg";
+const socialPreviewImage = `https://res.cloudinary.com/${cloudinaryCloudName}/image/upload/f_auto,q_auto,c_fill,w_1200,h_630/${socialPreviewId.replace(/^\/+/, "")}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: "Andres Gomes | Photography Portfolio",
     template: "%s | Andres Gomes",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
   },
   description:
     "Photography portfolio featuring travel, street, motorsport, and wildlife work by Andres Gomes.",
