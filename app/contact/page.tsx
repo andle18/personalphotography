@@ -2,11 +2,38 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import CloudImage from "../components/CloudImage";
+import ContactForm from "./ContactForm";
+import { socialPreviewImage } from "../data/site";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Andres Gomes for collaborations, commissions, and photography inquiries.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact | Andres Gomes",
+    description:
+      "Get in touch with Andres Gomes for collaborations, commissions, and photography inquiries.",
+    url: "/contact",
+    type: "website",
+    images: [
+      {
+        url: socialPreviewImage,
+        width: 1200,
+        height: 630,
+        alt: "Preview of Andres Gomes contact page",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | Andres Gomes",
+    description:
+      "Get in touch with Andres Gomes for collaborations, commissions, and photography inquiries.",
+    images: [socialPreviewImage],
+  },
 };
 
 export default function ContactPage() {
@@ -55,80 +82,7 @@ export default function ContactPage() {
 
       <main className="mx-auto max-w-6xl px-6 pb-24">
         <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur">
-          <form action="#" method="POST" className="p-6 sm:p-10">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-              <div>
-                <label
-                  htmlFor="first-name"
-                  className="block text-sm font-semibold text-white"
-                >
-                  First Name
-                </label>
-                <input
-                  id="first-name"
-                  name="first-name"
-                  type="text"
-                  autoComplete="given-name"
-                  className="mt-2.5 block w-full rounded-md bg-white/10 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/20 placeholder:text-white/50 focus:outline-2 focus:-outline-offset-2 focus:outline-white/50"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="last-name"
-                  className="block text-sm font-semibold text-white"
-                >
-                  Last Name
-                </label>
-                <input
-                  id="last-name"
-                  name="last-name"
-                  type="text"
-                  autoComplete="family-name"
-                  className="mt-2.5 block w-full rounded-md bg-white/10 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/20 placeholder:text-white/50 focus:outline-2 focus:-outline-offset-2 focus:outline-white/50"
-                />
-              </div>
-              <div className="sm:col-span-2">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-semibold text-white"
-                >
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  className="mt-2.5 block w-full rounded-md bg-white/10 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/20 placeholder:text-white/50 focus:outline-2 focus:-outline-offset-2 focus:outline-white/50"
-                />
-              </div>
-              <div className="sm:col-span-2">
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-semibold text-white"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  className="mt-2.5 block w-full rounded-md bg-white/10 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/20 placeholder:text-white/50 focus:outline-2 focus:-outline-offset-2 focus:outline-white/50"
-                  placeholder="Tell me about your idea..."
-                  defaultValue={""}
-                />
-              </div>
-            </div>
-
-            <div className="mt-10 flex justify-end border-t border-white/10 pt-8">
-              <button
-                type="submit"
-                className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-semibold text-white ring-1 ring-white/15 backdrop-blur hover:bg-white/15"
-              >
-                Send Message
-              </button>
-            </div>
-          </form>
+          <ContactForm />
         </div>
       </main>
 

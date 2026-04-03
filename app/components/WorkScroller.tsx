@@ -26,25 +26,25 @@ export default function WorkGalleryRail() {
     <div
       ref={scrollerRef}
       onWheel={handleWheel}
-      className="scrollbar-themed h-full w-full overflow-x-auto overflow-y-hidden"
+      className="scrollbar-themed h-full w-full overflow-x-auto overflow-y-hidden pt-3 sm:pt-0"
     >
-      <div className="flex h-full items-end gap-[3px] px-5 pb-6 pr-5 sm:px-6 md:pr-[18vw]">
+      <div className="flex h-full items-end gap-[3px] px-4 pb-4 pr-4 sm:px-6 sm:pb-6 md:pr-[18vw]">
         <article
-          className="case-card hidden shrink-0 items-end self-end bg-black/10 md:flex"
+          className="case-card shrink-0 self-end bg-black/15"
           style={{
-            width: "clamp(260px, 36vw, 520px)",
-            maxWidth: 520,
+            width: "clamp(220px, 66vw, 390px)",
+            maxWidth: 390,
             aspectRatio: "0.6 / 1",
           }}
         >
-          <div className="px-6 pb-8 pt-7">
-            <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+          <div className="px-4 pb-6 pt-7 sm:px-6 sm:pb-8 sm:pt-7">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/50 sm:mt-10">
               {WORK_INTRO.kicker}
             </p>
-            <h2 className="mt-3 text-3xl font-medium tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-medium tracking-tight text-white sm:mt-10 sm:text-4xl">
               {WORK_INTRO.title}
             </h2>
-            <p className="mt-4 text-sm leading-6 text-white/70">
+            <p className="mt-3 text-sm leading-6 text-white/70 sm:mt-4">
               {WORK_INTRO.description}
             </p>
           </div>
