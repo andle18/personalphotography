@@ -8,6 +8,13 @@ export type WorkItem = {
   fit?: "cover" | "contain"; // contain = se ve mas alejada (zoom out)
 };
 
+export const WORK_INTRO = {
+  kicker: "SCROLL",
+  title: "Visual Elegance",
+  description:
+    "This journey is meant to be explored slowly, allowing each image the space to breathe. Continue to the right to discover all the series.",
+};
+
 export const WORK: WorkItem[] = [
   {
     slug: "london",

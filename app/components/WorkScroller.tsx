@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { WORK } from "../data/work";
+import { WORK, WORK_INTRO } from "../data/work";
 import WorkCard from "./WorkCard";
 
 export default function WorkGalleryRail() {
@@ -28,27 +28,24 @@ export default function WorkGalleryRail() {
       onWheel={handleWheel}
       className="scrollbar-themed h-full w-full overflow-x-auto overflow-y-hidden"
     >
-      <div className="flex h-full items-end gap-[3px] px-6 pb-6 pr-[18vw]">
+      <div className="flex h-full items-end gap-[3px] px-5 pb-6 pr-5 sm:px-6 md:pr-[18vw]">
         <article
-          className="case-card flex items-end bg-black/10 self-end"
+          className="case-card hidden shrink-0 items-end self-end bg-black/10 md:flex"
           style={{
-            width: "36vw",
+            width: "clamp(260px, 36vw, 520px)",
             maxWidth: 520,
-            minWidth: 360,
             aspectRatio: "0.6 / 1",
           }}
         >
           <div className="px-6 pb-8 pt-7">
             <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-              SCROLL
+              {WORK_INTRO.kicker}
             </p>
-            <h2 className="mt-3 text-4xl font-medium tracking-tight text-white">
-              Visual Elegance
+            <h2 className="mt-3 text-3xl font-medium tracking-tight text-white sm:text-4xl">
+              {WORK_INTRO.title}
             </h2>
             <p className="mt-4 text-sm leading-6 text-white/70">
-              This journey is meant to be explored slowly, allowing each image
-              the space to breathe. Continue to the right to discover all the
-              series.
+              {WORK_INTRO.description}
             </p>
           </div>
         </article>
