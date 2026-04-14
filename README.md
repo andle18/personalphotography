@@ -57,11 +57,18 @@ npm run start
 
 ### Environment Variables
 
-Create a `.env.local` file for Cloudinary images and Google Analytics.
+Create a `.env.local` file for Cloudinary images, Google Analytics, and Firebase.
 
 ```env
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_FIREBASE_API_KEY=...
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=...
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=...
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
+NEXT_PUBLIC_FIREBASE_APP_ID=...
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
 Notes:
@@ -69,6 +76,8 @@ Notes:
 - Local images stored in `public/` work without this variable.
 - Cloudinary-based image entries require this variable to render correctly.
 - `NEXT_PUBLIC_GA_ID` enables GA4 page tracking via the Next.js Google Analytics integration.
+- Firebase is used by the contact form to store submissions in Firestore.
+- Firestore rules must allow this write flow, otherwise use Firebase Admin credentials on the server.
 - In production, add the same variables in your hosting provider (for example, Vercel Environment Variables).
 
 ### Scripts
@@ -94,7 +103,7 @@ public/                Local static assets
 
 ### Current Limitations
 
-- The contact form is currently presentational and does not submit to a backend service
+- The contact form depends on a working Firebase / Firestore configuration and compatible rules
 - Project content is managed through local TypeScript data files instead of a CMS
 - There is no automated test suite yet
 - Metadata and SEO can be expanded further for production-grade discoverability
@@ -161,11 +170,18 @@ npm run start
 
 ### Variables de Entorno
 
-Crea un archivo `.env.local` para imagenes de Cloudinary y Google Analytics.
+Crea un archivo `.env.local` para imagenes de Cloudinary, Google Analytics y Firebase.
 
 ```env
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_FIREBASE_API_KEY=...
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=...
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=...
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
+NEXT_PUBLIC_FIREBASE_APP_ID=...
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
 Notas:
@@ -173,6 +189,8 @@ Notas:
 - Las imagenes locales dentro de `public/` funcionan sin esta variable.
 - Las entradas que usan Cloudinary necesitan esta variable para renderizar correctamente.
 - `NEXT_PUBLIC_GA_ID` activa el tracking de paginas de GA4 mediante la integracion de Google Analytics de Next.js.
+- Firebase se usa en el formulario de contacto para guardar envios en Firestore.
+- Las reglas de Firestore deben permitir este flujo de escritura; si no, usa credenciales Admin de Firebase en el servidor.
 - En produccion, agrega las mismas variables en tu proveedor de hosting (por ejemplo, Environment Variables de Vercel).
 
 ### Scripts
@@ -198,7 +216,7 @@ public/                Assets estaticos locales
 
 ### Limitaciones Actuales
 
-- El formulario de contacto es solo visual y no envia datos a un servicio real
+- El formulario de contacto depende de una configuracion valida de Firebase / Firestore y de reglas compatibles
 - El contenido se gestiona desde archivos TypeScript locales, no desde un CMS
 - Todavia no existe una suite de tests automatizados
 - El SEO y la metadata todavia pueden mejorar para un lanzamiento mas solido

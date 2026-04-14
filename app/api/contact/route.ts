@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
+export const runtime = "nodejs";
+
 type ContactPayload = {
   firstName: string;
   lastName: string;
@@ -9,7 +11,7 @@ type ContactPayload = {
   message: string;
 };
 
-function sanitize(value: FormDataEntryValue | null) {
+function clean(value: FormDataEntryValue | null): string {
   return typeof value === "string" ? value.trim() : "";
 }
 
@@ -43,10 +45,10 @@ export async function POST(request: Request) {
     const formData = await request.formData();
 
     const payload: ContactPayload = {
-      firstName: sanitize(formData.get("firstName")),
-      lastName: sanitize(formData.get("lastName")),
-      email: sanitize(formData.get("email")),
-      message: sanitize(formData.get("message")),
+      firstName: clean(formData.get("firstName")),
+      lastName: clean(formData.get("lastName")),
+      email: clean(formData.get("email")),
+      message: clean(formData.get("message")),
     };
 
     const validationError = validatePayload(payload);
@@ -57,14 +59,14 @@ export async function POST(request: Request) {
       );
     }
 
-    const doc = await addDoc(collection(db, "contactMessages"), {
+    const docRef = await addDoc(collection(db, "contactMessages"), {
       ...payload,
       status: "new",
       source: "website-contact-form",
       createdAt: serverTimestamp(),
     });
 
-    return NextResponse.json({ ok: true, id: doc.id });
+    return NextResponse.json({ ok: true, id: docRef.id });
   } catch (error) {
     const message =
       error instanceof Error

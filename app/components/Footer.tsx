@@ -38,7 +38,7 @@ export default function Footer() {
 
   return (
     <footer className="relative z-0  overflow-hidden border-t border-white/10">
-      <div className="absolute inset-0">
+      <div className="pointer-events-none absolute inset-0">
         <CloudImage
           id={footerBg}
           alt=""

@@ -53,7 +53,10 @@ export default function ContactPage() {
 
         <div className="mx-auto max-w-6xl px-6 pt-28 pb-16 sm:pt-36">
           <div className="max-w-2xl">
-            <p className="text-sm tracking-widest text-white/90">CONTACT</p>
+            <Link href="/" className="text-sm text-white/70 hover:text-white ">
+              CONTACTO
+            </Link>
+
             <h1 className="mt-4 text-balance text-5xl font-semibold tracking-tight sm:text-7xl">
               Let&apos;s Talk.
             </h1>
@@ -73,14 +76,14 @@ export default function ContactPage() {
                 href="/"
                 className="text-sm font-semibold text-white/80 hover:text-white"
               >
-                Home →
+                ← Home
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <main className="mx-auto max-w-6xl px-6 pb-24">
+      <main className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
         <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur">
           <ContactForm />
         </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { sendGAEvent } from "@next/third-parties/google";
 import { FormEvent, useState } from "react";
 
 const MAX_CHARS = 500;
@@ -19,12 +20,17 @@ export default function ContactForm() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), 12000);
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         body: formData,
+        signal: controller.signal,
       });
+
+      window.clearTimeout(timeoutId);
 
       const result = (await response.json()) as {
         ok: boolean;
@@ -39,12 +45,23 @@ export default function ContactForm() {
         return;
       }
 
+      sendGAEvent("event", "contact_form_submit", {
+        form_name: "contact",
+        page_path: "/contact",
+      });
+
       form.reset();
+      setCharCount(0);
       setSendState("success");
       setFeedback("Message sent. I will reply as soon as possible.");
-    } catch {
+    } catch (error) {
+      window.clearTimeout(timeoutId);
       setSendState("error");
-      setFeedback("Could not send message. Please try again.");
+      setFeedback(
+        error instanceof DOMException && error.name === "AbortError"
+          ? "The request took too long. Please try again."
+          : "Could not send message. Please try again.",
+      );
     }
   };
 
