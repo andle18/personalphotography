@@ -1,203 +1,187 @@
-# Andres Gomes Portfolio
+# Andres Gomes Photography Portfolio
 
-Professional photography portfolio built with Next.js, focused on visual presentation, curated galleries, and a clean browsing experience for selected work.
+A modern, responsive photography portfolio built with Next.js, showcasing curated galleries through cinematic interactions and clean design. Features a contact form with Firebase integration for client inquiries.
 
-Este es un portafolio profesional de fotografia construido con Next.js, enfocado en la presentacion visual, galerias curadas y una experiencia limpia para explorar proyectos seleccionados.
+Un portafolio de fotografía moderno y responsivo construido con Next.js, que muestra galerías curadas a través de interacciones cinematográficas y un diseño limpio. Incluye un formulario de contacto con integración de Firebase para consultas de clientes.
 
-## English
+## Project Overview
 
-### Project Overview
+This is a personal photography portfolio for Andres Gomes, designed to present selected work series in an engaging, scroll-driven interface. The site emphasizes visual storytelling with smooth animations, optimized image loading, and a minimal aesthetic that lets the photography take center stage.
 
-This project is a personal photography portfolio for Andres Gomes. It showcases selected series through a cinematic landing page, a horizontally scrollable work index, and dedicated gallery pages for each collection.
+Este es un portafolio personal de fotografía para Andres Gomes, diseñado para presentar series de trabajos seleccionados en una interfaz impulsada por scroll. El sitio enfatiza la narrativa visual con animaciones suaves, carga optimizada de imágenes y una estética minimalista que permite que la fotografía ocupe el centro del escenario.
 
-The application is intentionally content-driven. It does not include a CMS, authentication, or a backend contact workflow at this stage.
+## Features
 
-### Features
+- **Cinematic Landing Page**: Hero section with background image, gradient overlay, and call-to-action buttons
+- **Horizontal Work Gallery**: Scrollable index of photography series with animated card interactions
+- **Dedicated Gallery Pages**: Individual pages for each work collection with grid layouts
+- **Contact Form**: Client inquiry form with validation, Firebase Firestore storage, and Google Analytics tracking
+- **Responsive Design**: Optimized for mobile and desktop viewing
+- **SEO Optimized**: Proper metadata, Open Graph, and Twitter Card support
+- **Performance Focused**: Image optimization via Cloudinary, lazy loading, and efficient bundling
 
-- Landing page with editorial-style hero section and photographer introduction
-- Work index with horizontal scroll interaction
-- Dedicated gallery pages by collection slug
-- Mixed image source support through Cloudinary and local assets
-- Animated transitions for selected work cards
-- Contact page with portfolio-style inquiry form UI
-- Shared footer with social links
+- **Página de Aterrizaje Cinematográfica**: Sección hero con imagen de fondo, superposición de gradiente y botones de llamada a la acción
+- **Galería de Trabajo Horizontal**: Índice desplazable de series fotográficas con interacciones animadas de tarjetas
+- **Páginas de Galería Dedicadas**: Páginas individuales para cada colección de trabajo con diseños de cuadrícula
+- **Formulario de Contacto**: Formulario de consulta de cliente con validación, almacenamiento en Firebase Firestore y seguimiento de Google Analytics
+- **Diseño Responsivo**: Optimizado para visualización en móvil y escritorio
+- **Optimizado para SEO**: Soporte adecuado de metadatos, Open Graph y Twitter Card
+- **Enfocado en el Rendimiento**: Optimización de imágenes vía Cloudinary, carga diferida y empaquetado eficiente
 
-### Tech Stack
+## Tech Stack
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS
-- GSAP
-- Swiper
-- Cloudinary
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: GSAP
+- **Carousels**: Swiper
+- **Images**: Cloudinary
+- **Database**: Firebase Firestore
+- **Analytics**: Google Analytics 4
+- **Deployment**: Vercel (recommended)
 
-### Installation and Setup
+- **Framework**: Next.js 16 (App Router)
+- **Lenguaje**: TypeScript
+- **Estilización**: Tailwind CSS
+- **Animaciones**: GSAP
+- **Carruseles**: Swiper
+- **Imágenes**: Cloudinary
+- **Base de Datos**: Firebase Firestore
+- **Análisis**: Google Analytics 4
+- **Despliegue**: Vercel (recomendado)
 
-#### Prerequisites
+## Installation & Setup
 
-- Node.js 20+
-- npm
+### Prerequisites
 
-#### Local Development
+- Node.js 20 or higher
+- npm or yarn
 
-```bash
-npm install
-npm run dev
-```
+### Local Development
 
-Open `http://localhost:3000` in the browser.
+1. Clone the repository:
 
-#### Production Build
+   ```bash
+   git clone https://github.com/yourusername/myportfolio.git
+   cd myportfolio
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Create environment variables file (see Environment Variables section below)
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Production Build
 
 ```bash
 npm run build
 npm run start
 ```
 
-### Environment Variables
+## Environment Variables
 
-Create a `.env.local` file for Cloudinary images, Google Analytics, and Firebase.
+Create a `.env.local` file in the root directory with the following variables:
 
 ```env
+# Cloudinary (required for image optimization)
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
+
+# Google Analytics 4 (optional)
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-NEXT_PUBLIC_FIREBASE_API_KEY=...
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=...
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=...
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
-NEXT_PUBLIC_FIREBASE_APP_ID=...
+
+# Firebase (required for contact form)
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-XXXXXXXXXX
+
+# Site configuration (optional)
+NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+NEXT_PUBLIC_SOCIAL_PREVIEW_ID=your_image_id
 ```
 
-Notes:
+**Notes:**
 
-- Local images stored in `public/` work without this variable.
-- Cloudinary-based image entries require this variable to render correctly.
-- `NEXT_PUBLIC_GA_ID` enables GA4 page tracking via the Next.js Google Analytics integration.
-- Firebase is used by the contact form to store submissions in Firestore.
-- Firestore rules must allow this write flow, otherwise use Firebase Admin credentials on the server.
-- In production, add the same variables in your hosting provider (for example, Vercel Environment Variables).
+- Cloudinary variables are required if using Cloudinary-hosted images
+- Firebase variables are required for the contact form to function
+- Ensure Firestore security rules allow write operations for contact form submissions
+- For production deployment, set these variables in your hosting platform (Vercel, Netlify, etc.)
 
-### Scripts
+## Scripts
 
-- `npm run dev`: Start the development server
-- `npm run build`: Create a production build
-- `npm run start`: Start the production server
-- `npm run lint`: Run ESLint
+- `npm run dev` - Start development server
+- `npm run build` - Create production build
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint for code quality checks
 
-### Project Structure
+## Project Structure
 
-```text
+```
 app/
-	components/          Reusable UI and motion components
-	contact/             Contact page
-	data/                Portfolio and gallery data
-	work/                Work listing and gallery routes
-	globals.css          Global styles
-	layout.tsx           Root layout and metadata
-	page.tsx             Homepage
-public/                Local static assets
+├── api/
+│   └── contact/
+│       └── route.ts          # Contact form API endpoint
+├── components/
+│   ├── CloudImage.tsx        # Optimized image component
+│   ├── Footer.tsx            # Site footer
+│   ├── WorkCard.tsx          # Work gallery card
+│   ├── WorkGalleryRail.tsx   # Horizontal scroll component
+│   └── ...
+├── contact/
+│   ├── ContactForm.tsx       # Contact form component
+│   └── page.tsx              # Contact page
+├── data/
+│   ├── galleries.ts          # Gallery image data
+│   ├── site.ts               # Work/portfolio data
+│   └── work.ts               # Site configuration
+├── work/
+│   ├── [slug]/
+│   │   └── page.tsx          # Dynamic gallery pages
+│   └── page.tsx              # Work index page
+├── globals.css               # Global styles
+├── layout.tsx                # Root layout
+└── page.tsx                  # Homepage
+
+lib/
+└── firebase.ts               # Firebase configuration
+
+public/                       # Static assets
 ```
 
-### Current Limitations
+## Future Improvements
 
-- The contact form depends on a working Firebase / Firestore configuration and compatible rules
-- Project content is managed through local TypeScript data files instead of a CMS
-- There is no automated test suite yet
-- Metadata and SEO can be expanded further for production-grade discoverability
+- Add unit and integration tests
+- Implement rate limiting for contact form
+- Add image lazy loading and progressive enhancement
+- Consider migrating contact API to Firebase Admin SDK for better security
+- Add dark/light theme toggle
+- Implement CMS for easier content management
+- Add image zoom/modal functionality
+- Optimize Core Web Vitals scores further
+- Add internationalization (i18n) support
 
-### Future Improvements
+## Contributing
 
-- Connect the contact form to a real email or form processing service
-- Add stronger SEO metadata, Open Graph tags, and structured data
-- Introduce a CMS or content workflow for easier gallery updates
-- Add accessibility review and keyboard interaction refinements
-- Add tests for critical UI flows and data integrity
-- Improve asset organization and content consistency across routes
+This is a personal portfolio project. For suggestions or issues, please open a GitHub issue.
 
-## Espanol
+## License
 
-### Descripcion General
+This project is private and not licensed for public use.
 
-Este proyecto es un portafolio personal de fotografia para Andres Gomes. Presenta series seleccionadas a traves de una home con enfoque editorial, una seccion de trabajo con scroll horizontal y paginas de galeria dedicadas para cada coleccion.
-
-La aplicacion esta pensada principalmente como una experiencia visual. En su estado actual no incluye CMS, autenticacion ni un flujo backend para el formulario de contacto.
-
-### Funcionalidades
-
-- Home con hero visual y presentacion del fotografo
-- Seccion de trabajos con interaccion horizontal
-- Paginas de galeria por coleccion
-- Soporte para imagenes desde Cloudinary y assets locales
-- Transiciones animadas en tarjetas destacadas
-- Pagina de contacto con interfaz de formulario
-- Footer compartido con enlaces sociales
-
-### Stack Tecnologico
-
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS
-- GSAP
-- Swiper
-- Cloudinary
-
-### Instalacion y Puesta en Marcha
-
-#### Requisitos
-
-- Node.js 20+
-- npm
-
-#### Desarrollo Local
-
-```bash
-npm install
-npm run dev
-```
-
-Abre `http://localhost:3000` en el navegador.
-
-#### Build de Produccion
-
-```bash
-npm run build
-npm run start
-```
-
-### Variables de Entorno
-
-Crea un archivo `.env.local` para imagenes de Cloudinary, Google Analytics y Firebase.
-
-```env
-NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-NEXT_PUBLIC_FIREBASE_API_KEY=...
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=...
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=...
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
-NEXT_PUBLIC_FIREBASE_APP_ID=...
-NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-XXXXXXXXXX
-```
-
-Notas:
-
-- Las imagenes locales dentro de `public/` funcionan sin esta variable.
-- Las entradas que usan Cloudinary necesitan esta variable para renderizar correctamente.
-- `NEXT_PUBLIC_GA_ID` activa el tracking de paginas de GA4 mediante la integracion de Google Analytics de Next.js.
-- Firebase se usa en el formulario de contacto para guardar envios en Firestore.
-- Las reglas de Firestore deben permitir este flujo de escritura; si no, usa credenciales Admin de Firebase en el servidor.
-- En produccion, agrega las mismas variables en tu proveedor de hosting (por ejemplo, Environment Variables de Vercel).
-
-### Scripts
-
-- `npm run dev`: Inicia el servidor de desarrollo
-- `npm run build`: Genera el build de produccion
-- `npm run start`: Inicia el servidor en modo produccion
 - `npm run lint`: Ejecuta ESLint
 
 ### Estructura del Proyecto

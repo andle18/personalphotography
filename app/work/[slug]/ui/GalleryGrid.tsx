@@ -58,7 +58,7 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
       {/* MODAL */}
       {current ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          className="fixed inset-10 z-50 flex items-center justify-center bg-black/80 p-4"
           onClick={() => setActive(null)}
           role="dialog"
           aria-modal="true"

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import WorkGalleryRail from "../components/WorkScroller";
+import WorkGalleryRail from "../components/WorkGalleryRail";
 import { socialPreviewImage } from "../data/site";
 
 export const metadata: Metadata = {

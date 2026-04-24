@@ -15,7 +15,7 @@ const BG = WORK.map((item) => ({
 
 export default function WorkBackgroundSlider() {
   return (
-    <div className="fixed inset-0 -z-10">
+    <div className="fixed inset-10 -z-10">
       <Swiper
         modules={[Autoplay, EffectFade]}
         effect="fade"
